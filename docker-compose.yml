@@ -1,0 +1,33 @@
+version: '2.3'
+
+services:
+
+  jupyter-lab-01:
+    image: docker.io/joon09/jupyter-lab-gpu:ezmeta
+    container_name: jupyter-lab-01
+    runtime: nvidia
+    ports:
+      - "8201:8888"
+    # 4041 -> 4049 변경 iptables -I INPUT 1 -p tcp --dport 8201 -j ACCEPT
+    # 8888 -> 8889 docker run --gpus all -p 8777:8888 tensorflow/tensorflow:2.7.1-gpu-jupyter
+    environment:
+      - TZ=Asia/Seoul
+      - LOG4J_FORMAT_MSG_NO_LOOKUPS=true
+      #        - JUPYTER_ENABLE_LAB='yes'
+      - NVIDIA_VISIBLE_DEVICES=0
+    restart: always
+    user: 'root'
+    networks:
+      default:
+        ipv4_address: 10.5.0.31
+    volumes:
+      - /data/jupyter/notebook:/home/ezmeta/work:z
+      - /data/jupyter/data:/home/ezmeta/data:z
+    shm_size: "8gb"
+
+networks:
+  default:
+    external:
+      name: distribute_ezmeta
+
+#  docker network create --gateway 10.5.0.1 --subnet 10.5.0.0/21 --driver bridge distribute_ezmeta
