@@ -325,4 +325,6 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/.bashrc && so
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
     apt-get install git-lfs
 
+RUN chmod 777 $HOME
+
 USER ${NB_UID}
