@@ -2,7 +2,7 @@
 
 set -e
 
-DOCKER_REPO=joon09/
+DOCKER_REPO=joon09
 TAG=ezmeta
 
 build() {

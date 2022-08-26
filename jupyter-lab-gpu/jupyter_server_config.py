@@ -10,7 +10,7 @@ from jupyter_core.paths import jupyter_data_dir
 c = get_config()  # noqa: F821
 c.ServerApp.ip = "0.0.0.0"
 c.ServerApp.port = 8888
-c.ServerApp.password = u'$argon2id$v=19$m=131072,t=4,p=2$YB0aL8APDR8TFps6nZlFxQ$4I6FMRj8YApLh+rqiuEfcqyY0O9/suTZlS/lycMNB5c'
+c.ServerApp.password = u'argon2:$argon2id$v=19$m=10240,t=10,p=8$JkbuJAmK9k8libwsEN1iiQ$nCQzDEw0u+oNFKlv48bcU98r9jxEWz/LTWapb+/cSOs'
 c.ServerApp.open_browser = False
 
 # https://github.com/jupyter/notebook/issues/3130
