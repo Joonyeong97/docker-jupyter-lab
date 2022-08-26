@@ -6,6 +6,6 @@ docker run -it --gpus all -p 8209:8888 -v /mnt/d/notebook:/home/ezmeta/work \
 docker.io/joon09/jupyter-lab-gpu:ezmeta
 
 
-docker run -it --gpus all -p 8209:8888 \
---name jupyter-lab-test \
-docker.io/joon09/jupyter-lab-gpu:ezmeta
+#docker run -it --gpus all -p 8209:8888 \
+#--name jupyter-lab-test \
+#joon09/jupyter-lab-gpu:ezmeta01
