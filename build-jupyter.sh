@@ -3,7 +3,7 @@
 set -e
 
 DOCKER_REPO=joon09
-TAG=ezmeta
+TAG=ezmeta01
 
 build() {
     NAME=$1
