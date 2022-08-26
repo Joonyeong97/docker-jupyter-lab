@@ -21,8 +21,8 @@ services:
       default:
         ipv4_address: 10.5.0.31
     volumes:
-      - /data/jupyter/notebook:/home/ezmeta/work:z
-      - /data/jupyter/data:/home/ezmeta/data:z
+      - /mnt/d/notebook:/home/ezmeta/work:z
+      - /mnt/d/data:/home/ezmeta/data:z
     shm_size: "8gb"
 
 networks:
